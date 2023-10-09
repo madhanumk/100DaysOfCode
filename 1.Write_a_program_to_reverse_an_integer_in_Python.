@@ -1,0 +1,22 @@
+#Write a program to reverse an integer in Python.
+
+def reverse(numbers):
+    #method 1: inbuit  sort method
+    #return sorted(numbers, reverse=True)
+
+    #method 2: bubble sort
+    numbers_length = len(numbers)
+    for i in range(0,numbers_length - 1):
+        for j in range(0,numbers_length-i-1):
+            if numbers[j] < numbers[j+1]:
+                numbers[j],numbers[j+1] = numbers[j+1], numbers[j]
+
+    return numbers
+
+
+numbers  = [5,6,1,7,2,9,55,777,346]
+print(reverse(numbers))
+
+
+#result
+[777, 346, 55, 9, 7, 6, 5, 2, 1]
